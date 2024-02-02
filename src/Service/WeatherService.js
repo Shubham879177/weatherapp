@@ -48,24 +48,23 @@ const formatCurrentWeather = (data) => {
 
 
 const formatHourlyForecastWeather = (data)=>{
-  // console.log(data.list)
   let mylist = []
   const {timezone} = data.city
   data.list.map((value)=>{
     const {main:{temp},weather,dt}=value
-    const {icon} = weather[0]
+    const {icon:hourly_icon} = weather[0]
     let time = formatToLocalTime(dt,timezone, "hh:mm a")
-   mylist.push({temp,icon,time})
+   mylist.push({temp,hourly_icon,time})
   })
 
-  return(mylist.slice(1,6))
+  return(mylist)
 }
 
 
 
 
 const getFormattedWeatherData = async (searchParams) => {
-  console.log(searchParams)
+
   const formattedCurrentWeather = await getWeatherData(
     "weather",
     searchParams

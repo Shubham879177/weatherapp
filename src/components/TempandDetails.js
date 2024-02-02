@@ -16,7 +16,7 @@ function TempandDetails({weather:{details,icon,sunrise,current_temp,sunset,temp_
         <div>
             <div className=' flex flex-row items-center justify-center py-4 text-xl text-cyan-200'>
                 <p>{details}</p>
-                <UilSun className="text-white mx-5" size={25} />
+                
             </div>
             <div className='flex flex-row items-center justify-between py-3 text-white'>
                 <img src={iconUrlFromCode(icon)} alt="PIC" className='w-20' />

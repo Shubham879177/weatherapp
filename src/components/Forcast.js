@@ -10,11 +10,11 @@ const Forcast = (params) => {
             <hr className=' my-2 bg-white' />
             <div className='flex flex-row items-center justify-between text-white'>
                 {params.weather.mylist.map((value)=>
-                <div className='flex flex-col itm-center justify-center'>
+                <div key={value.temp} className='flex flex-col itm-center justify-center'>
                     <p className='font-light text-sm'>
-                        {formatTime(Number.parseInt(value.time))}
+                        {value.time}
                     </p>
-                    <img src={iconUrlFromCode(value.icon)} className='w-12 mt-1' />
+                    <img src={iconUrlFromCode(value.hourly_icon)} className='w-12 mt-1' />
                     <p className='font-medium ml-3'>{value.temp}</p>
                 </div>
                 )}
